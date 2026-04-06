@@ -1,29 +1,19 @@
-# ECS Log Analyzer – DevOps Build Lab
+# Python Based Automated IAM Least-Privilege Auditor
 
-This project demonstrates a fully automated AWS deployment pipeline using:
+### Purpose:
+A python script that automatically detects IAM policies that violate least privilege principles.
 
-- Terraform (Infrastructure as Code)
-- Docker (Application packaging)
-- GitHub Actions (CI/CD)
-- Amazon ECR (Container registry)
-- ECS Fargate (Container runtime)
-- Application Load Balancer (Traffic routing)
-- CloudWatch (Logging)
+### What it flags:
 
-The sample application is a Log Analyzer API developed in Python to process log files and identify error patterns, warnings, and service hotspots.
+"Action": "*"
 
-## Architecture
+"Resource": "*"
 
-Terraform provisions:
+### Usage:
 
-- VPC
-- Subnets
-- Application Load Balancer
-- ECS Cluster
-- ECS Service
-- IAM Roles
-- CloudWatch Log Groups
+python3 iam_audit.py
 
-CI/CD Pipeline:
+### Architecture Diagram
 
-GitHub Actions builds the container image and pushes it to ECR automatically on every commit.
+![Python-Based-Automated-IAM-Least-Privilege-Auditor](architecture/diagram.png)
+
